@@ -1,6 +1,6 @@
 <ul>
   Météo pour {{ cityName }}
   <li *ngFor="let forecast of forecasts">
-    {{forecast.weather[0].main}}
+    {{forecast.dt_txt}} : {{forecast.weather[0].main}}
   </li>
 </ul>
