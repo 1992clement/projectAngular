@@ -1,5 +1,5 @@
 <ul>
-  Météo pour {{ cityName }} le {{ time | date: 'medium'}}
+  Weather forecast for {{ cityName }} : {{ time | date: 'longDate' }} at {{ time | date: 'mediumTime' }}
 
     <p>
         {{forecast.weather[0].main}}
