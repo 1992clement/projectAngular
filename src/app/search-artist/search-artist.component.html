@@ -1,3 +1,13 @@
-<p>
-  search-artist works!
-</p>
+<label for="search-artiste">Rechercher : </label><br>
+<input id="search-artiste" ng-model="input" placeholder="Entrez le nom d'un artiste" (change)="searchArtiste($event)">
+<br><br>
+<div *ngIf="result!==undefined && result!==false">
+	<h2>{{result.name}}</h2>
+	<img src={{result.thumb_url}} alt="cover"/>
+	<button (click)="goToEvents(result.name)">Events</button>
+</div>
+<div *ngIf="result===false">
+	Navré, cet artiste est inconnu, veuillez réessayer.
+</div>
+
+<router-outlet></router-outlet>
