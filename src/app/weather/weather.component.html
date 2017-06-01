@@ -1,7 +1,8 @@
-<div *ngIf="forecast.weather">
+<div *ngIf="forecast.weather else elseBlock">
     Weather forecast for {{ cityName }} : {{ time | date: 'longDate' }} at {{ time | date: 'mediumTime' }}
     <p>
-        {{forecast.weather[0].main}}
+        {{forecast.dt_txt}}
         <img src="http://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png"/>
     </p>
 </div>
+<ng-template #elseBlock>No weather forecast for this show yet, come back in a few days.</ng-template>
