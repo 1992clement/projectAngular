@@ -8,8 +8,6 @@ import { SearchHistoryCreateComponent } from './search-history/search-history-cr
 import { SearchHistoryUpdateComponent } from './search-history/search-history-update/search-history-update.component';
 import { SearchHistoryDetailComponent } from './search-history/search-history-detail/search-history-detail.component';
 import { AppComponent } from './app.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { ConnectionComponent } from './connection/connection.component';
 import { FavorisComponent } from './favoris/favoris.component';
 import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
@@ -21,16 +19,8 @@ import { CallbackComponent } from './callback/callback.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'callback', component: CallbackComponent },
-  { path: '**', redirectTo: '' },
-  { 
-    path: 'connection', 
-    component: ConnectionComponent
-  },
-  { 
-    path: 'inscription', 
-    component: InscriptionComponent
-  },
   { 
     path: 'artist/:name', 
     component: SearchArtistComponent
