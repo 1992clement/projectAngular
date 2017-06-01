@@ -1,0 +1,31 @@
+#events-results-wrapper{
+	width : 70%;
+	margin-left : 15%;
+	background-color : white;
+}
+
+#events-results-wrapper h2{
+	padding : 40px;
+}
+
+#events-results-wrapper ul{
+	padding : 0;
+	margin: 0;
+}
+
+#events-results-wrapper li{
+	list-style:none;
+	display : block;
+	padding : 40px 25px;
+	border-top : 1px solid #eee;
+}
+
+#events-results-wrapper button{
+	margin-top : 15px;
+	background-color : #2196F3;
+	color : white;
+}
+
+.country-name{
+	color : #2196F3;
+}

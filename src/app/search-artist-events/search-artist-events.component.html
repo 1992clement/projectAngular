@@ -1,8 +1,29 @@
-<div *ngIf="events!==undefined&&events[0]!==undefined">
-	<h1>Liste des events pour : {{events[0].lineup[0]}}</h1>
-	<div *ngFor="let event of events">
-	{{event.venue.name}}
-	</div>
+<div *ngIf="events!==undefined&&events[0]!==undefined" id="events-results-wrapper">
+	<h2>Liste des events pour : {{events[0].lineup[0]}}</h2>
+	<ul>
+		<li *ngFor="let event of events">
+			<div class="row">
+				<div class="col-md-6">
+					<span class="country-name">
+						{{event.venue.country}}, {{event.venue.city}}
+					</span>
+					- {{event.venue.name}}<br>
+					<span class="date">
+						{{event.datetime}}
+					</span>
+					<span *ngIf="event.offers[0]">
+						- tickets {{event.offers[0].status}} 
+					</span> <br>
+					<button class="btn">
+						Check the weather
+					</button>
+				</div>
+				<div class="col-md-6">
+
+				</div>
+			</div>
+		</li>
+	</ul>
 </div>
 <div *ngIf="!(events!==undefined&&events[0]!==undefined)">
 	Désolé, ce groupe n'a aucun event de prévu pour l'instant !

@@ -1,6 +1,8 @@
 <h4 *ngIf="auth.isAuthenticated()">
   ICI COMPOSANT DE RECHERCHE
 </h4>
-<h4 *ngIf="!auth.isAuthenticated()">
-  You are not logged in! Please <a (click)="auth.login()">Log In</a> to continue.
-</h4>
+<p id="welcome-text" *ngIf="!auth.isAuthenticated()">
+  Hello you and welcome here ! Using this absolutely amazing app, you can look for the next concerts of your favorites bands, and instantly know wether the weather will be crappy as fuck or sunny as hell !<br>
+  You can also <a (click)="auth.login()">log in</a> using your social media account to add the groups you want to keep an eye on into your favs. You will be able to get all the info instantly next time you come here !<br>
+  See you around !
+</p>
