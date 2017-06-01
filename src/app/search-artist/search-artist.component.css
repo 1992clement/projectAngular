@@ -1,0 +1,48 @@
+#search-artiste{
+	display : inline-block;
+	border : 1px solid #eee;
+	padding : 10px 15px;
+	width : 70%;
+	margin-left : 15%;
+	font-size : 14px;
+}
+#results-wrapper{
+	position : relative;
+	overflow : normal;
+	width : 70%;
+	height : 200px;
+	border : 1px solid #eee;
+	margin-left : 15%;
+	background-color : white;
+}
+#cover-wrapper{
+	position : relative;
+	float : left;
+}
+#cover{
+	height : 200px;
+	width : auto;
+	margin : -1px;
+}
+#band-info-wrapper{
+	position : relative;
+	padding : 15px;
+	float : left;
+}
+#band-title{
+	margin : 0;
+	margin-bottom : 10px;
+	line-height : 30px;
+}
+#band-social-media{
+	width : 20px;
+	height : 20px;
+}
+#unknown-artist{
+	width : 70%;
+	margin-left : 15%;
+	color : white;
+	font-size : 20px;
+	letter-spacing : 0.5px;
+	line-height : 40px;
+}
