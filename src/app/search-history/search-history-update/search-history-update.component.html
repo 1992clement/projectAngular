@@ -1,0 +1,30 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Update Search History</h1>
+    <form (ngSubmit)="onSubmit()" #searchHistoryForm="ngForm">
+      <div class="form-group">
+        <label for="search">Search text</label>
+        <input type="text" class="form-control" id="search"
+               required
+               [(ngModel)]="currentSearchHistory.search" name="search"
+               #search="ngModel">
+        <div [hidden]="search.valid || search.pristine"
+             class="alert alert-danger">
+          Search text is required
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!searchHistoryForm.form.valid">Preview</button>
+      <button type="button" class="btn btn-success" (click)="updateSearchHistory(); searchHistoryForm.reset()">Update</button>
+    </form>
+  </div>
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Search text</div>
+      <div class="col-xs-9  pull-left">{{ currentSearchHistory.search }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+    <button type="button" class="btn btn-success" (click)="updateSearchHistory(); searchHistoryForm.reset()">Update</button>
+  </div>
+</div>
