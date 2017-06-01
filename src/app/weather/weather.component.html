@@ -1,6 +1,8 @@
 <ul>
-  Météo pour {{ cityName }}
-  <li *ngFor="let forecast of forecasts">
-    {{forecast.dt_txt}} : {{forecast.weather[0].main}}
-  </li>
+  Météo pour {{ cityName }} le {{ time | date: 'medium'}}
+
+    <p>
+        {{forecast.weather[0].main}}
+        <img src="http://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png" />
+    </p>
 </ul>

@@ -12,7 +12,11 @@ export class WeatherComponent implements OnInit {
     title = 'app works!';
     weather = 'app works!';
     forecasts: Forecast[] = [];
+    forecast= {};
     cityName = 'Landeleau';
+    time = new Date("2017-06-01T19:22:00");
+    oldDate = null;
+    date = new Date();
 
     constructor(private meteoService: MeteoService) {
     }
@@ -24,6 +28,22 @@ export class WeatherComponent implements OnInit {
     setDataForCity(data): void {
         this.cityName = data.city.name;
         this.forecasts = data.list as Forecast[];
-        console.log(this.forecasts);
+        for(var i = 1; i < this.forecasts.length; i++) {
+            this.date = this.meteoService.changeDateFormat(this.forecasts[i].dt_txt);
+            if(this.oldDate != null) {
+                if(this.date <= this.time && this.date > this.oldDate) {
+                    this.forecast = this.forecasts[i];
+                }
+            }
+            else {
+                if(this.date <= this.time) {
+                    this.forecast = this.forecasts[i];
+                }
+                else {
+                }
+            }
+            this.oldDate = this.meteoService.changeDateFormat(this.forecasts[i].dt_txt);
+        }
+        //console.log(this.forecasts);
     }
 }

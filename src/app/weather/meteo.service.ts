@@ -11,12 +11,6 @@ export class MeteoService {
     constructor(private http: Http) {
     }
 
-    private getResult(url: string): Promise<string> {
-        return new Promise(resolve => {
-            setTimeout(self => resolve(location + ' : toto'), 1000);
-        });
-    }
-
     getWeatherFor(cityname: string): Promise<any> {
         const url = this.buildUrl(this.apiUrl, this.apiKey, cityname);
         return this.http.get(url)
@@ -33,4 +27,8 @@ export class MeteoService {
         return Promise.reject(error.message || error);
     }
 
+    public changeDateFormat(date: string): any {
+        let newDate = new Date(date);
+        return newDate;
+    }
 }
