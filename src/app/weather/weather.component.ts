@@ -15,7 +15,7 @@ export class WeatherComponent implements OnInit {
     forecasts: Forecast[] = [];
     forecast = {};
     cityName = 'Landeleau';
-    time = new Date('2017-07-01T19:22:00');
+    time = new Date('2017-06-01T19:22:00');
     oldDate = null;
     oldForecast = {};
     date = new Date();
