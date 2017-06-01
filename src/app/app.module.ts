@@ -22,6 +22,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnectionComponent } from './connection/connection.component';
 
 import { FavorisComponent } from './favoris/favoris.component';
+
+//Search
+import { SearchService } from './search.service';
 import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
 import { SearchEventWeatherComponent } from './search-event-weather/search-event-weather.component';
@@ -48,7 +51,7 @@ import { SearchEventWeatherComponent } from './search-event-weather/search-event
     HttpModule,
     AppRoutingModule
   ],
-  providers: [SearchHistoryService],
+  providers: [SearchHistoryService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
