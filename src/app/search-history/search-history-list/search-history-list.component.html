@@ -1,0 +1,10 @@
+<p>
+  Your search history
+</p>
+<div *ngFor="let searchHistory of searchHistories; let i=index">
+    {{searchHistory.search}} - <span (click)="toDetail(i)">Detail</span> - <span (click)="toUpdate(i)">Update</span> - <span (click)="toDelete(i)">Delete</span>
+</div>
+
+<button (click)="goBack()">Back</button>
+
+<a routerLink="/search-history/create" routerLinkActive="active">Create Search History</a>
