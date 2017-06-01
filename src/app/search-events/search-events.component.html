@@ -1,0 +1,9 @@
+<div *ngIf="events!==undefined&&events[0]!==undefined">
+	<h1>Liste des events pour : {{events[0].lineup[0]}}</h1>
+	<div *ngFor="let event of events">
+	{{event.venue.name}}
+	</div>
+</div>
+<div *ngIf="!(events!==undefined&&events[0]!==undefined)">
+	Désolé, ce groupe n'a aucun event de prévu pour l'instant !
+</div>
