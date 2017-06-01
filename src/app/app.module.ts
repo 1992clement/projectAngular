@@ -17,9 +17,7 @@ import { SearchHistoryUpdateComponent } from './search-history/search-history-up
 import { SearchHistoryDetailComponent } from './search-history/search-history-detail/search-history-detail.component';
 import { SearchHistoryComponent } from './search-history/search-history.component';
 
-// Auth
-import { InscriptionComponent } from './inscription/inscription.component';
-import { ConnectionComponent } from './connection/connection.component';
+
 
 import { FavorisComponent } from './favoris/favoris.component';
 import { SearchArtistComponent } from './search-artist/search-artist.component';
@@ -35,8 +33,6 @@ import { CallbackComponent } from './callback/callback.component';
   declarations: [
     AppComponent,
     WeatherComponent,
-    InscriptionComponent,
-    ConnectionComponent,
     FavorisComponent,
     SearchArtistComponent,
     SearchArtistEventsComponent,
