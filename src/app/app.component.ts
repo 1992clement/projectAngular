@@ -4,6 +4,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { AuthService } from './auth/auth.service';
 
+import { SearchArtistComponent} from './search-artist/search-artist.component';
+
 @NgModule({
   imports: [MdButtonModule, MdCheckboxModule],
 })

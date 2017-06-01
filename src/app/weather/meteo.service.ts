@@ -32,7 +32,7 @@ export class MeteoService {
      * @return {string}
      */
     buildUrl(apiUrl: string, apiKey: string, query: string): string {
-        return apiUrl + '?q=' + query + '&APPID=' + apiKey;
+        return apiUrl + '?q=' + query + '&APPID=' + apiKey + '&units=metric';
     }
 
     private handleError(error: any): Promise<any> {

@@ -20,6 +20,9 @@ import { SearchHistoryComponent } from './search-history/search-history.componen
 
 
 import { FavorisComponent } from './favoris/favoris.component';
+
+//Search
+import { SearchService } from './search.service';
 import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
 import { SearchEventWeatherComponent } from './search-event-weather/search-event-weather.component';
@@ -51,7 +54,7 @@ import { CallbackComponent } from './callback/callback.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [AuthService, SearchHistoryService],
+  providers: [AuthService,SearchHistoryService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
