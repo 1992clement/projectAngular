@@ -1,9 +1,14 @@
 <div *ngIf="events!==undefined&&events[0]!==undefined">
 	<h1>Liste des events pour : {{events[0].lineup[0]}}</h1>
 	<div *ngFor="let event of events">
-	{{event.venue.name}}
+        <span class="venue">{{event.venue.name}}</span>
+        <span class="details">{{event.venue.city}}, {{event.venue.country}}, <i>{{event.datetime | date: 'longDate' }} at {{event.datetime | date: 'mediumTime' }}</i></span>
+
+        <button (click)="goToWeather(name, event.venue.city, event.datetime)">See the weather</button>
 	</div>
 </div>
 <div *ngIf="!(events!==undefined&&events[0]!==undefined)">
 	Désolé, ce groupe n'a aucun event de prévu pour l'instant !
-</div> 
+</div>
+
+<router-outlet></router-outlet>

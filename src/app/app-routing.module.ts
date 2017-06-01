@@ -36,7 +36,7 @@ const routes: Routes = [
         component: SearchArtistEventsComponent
     },
     {
-        path: 'artist/:name/:event/weather',
+        path: 'artist/:name/:city/:event/weather',
         component: WeatherComponent
     },
     {

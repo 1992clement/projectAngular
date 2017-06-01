@@ -1,0 +1,9 @@
+.venue {
+    display: inline-block;
+    font-weight: bold;
+    width: 250px;
+}
+.details {
+    display: inline-block;
+    width: 500px;
+}

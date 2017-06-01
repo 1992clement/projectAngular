@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {MeteoService} from './meteo.service';
 import {Forecast} from './forecast';
 import {WeatherApiResponse} from './weather-api-response';
+import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location }               from '@angular/common';
 
 @Component({
     selector: 'app-weather',
@@ -10,21 +13,31 @@ import {WeatherApiResponse} from './weather-api-response';
     providers: [MeteoService]
 })
 export class WeatherComponent implements OnInit {
-    title = 'app works!';
-    weather = 'app works!';
     forecasts: Forecast[] = [];
     forecast = {};
-    cityName = 'Landeleau';
-    time = new Date('2017-06-01T19:22:00');
+    cityName = '';
+    time = new Date;
     oldDate = null;
     oldForecast = {};
     date = new Date();
 
-    constructor(private meteoService: MeteoService) {
+    constructor(private meteoService: MeteoService,
+                private route: ActivatedRoute,
+                private location: Location) {
     }
 
+    /**
+     * Get params from url
+     */
     ngOnInit(): void {
-        this.meteoService.getWeatherFor(this.cityName).then(results => this.setDataForCity(results));
+        this.time = this.meteoService.changeFormat(this.route.snapshot.params['event']);
+        this.route.params
+            .switchMap((params: Params) => this.meteoService.getWeatherFor(params['city']))
+            .subscribe(results => this.setDataForCity(results));
+    }
+
+    goBack(): void {
+        this.location.back();
     }
 
     /**
@@ -34,7 +47,6 @@ export class WeatherComponent implements OnInit {
     setDataForCity(data: WeatherApiResponse): void {
         this.cityName = data.city.name;
         this.forecasts = data.list as Forecast[];
-
         /**
          * Compare the date and hour of the show to the forecast
          */

@@ -39,4 +39,9 @@ export class MeteoService {
         // console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     }
+
+    changeFormat(date: string): Date{
+        let newDate = new Date(date.replace("T", " "));
+        return newDate;
+    }
 }
