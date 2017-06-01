@@ -11,11 +11,10 @@ import { AppComponent } from './app.component';
 import { FavorisComponent } from './favoris/favoris.component';
 import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
-import { SearchEventWeatherComponent } from './search-event-weather/search-event-weather.component';
+import { WeatherComponent } from './weather/weather.component';
 
 import { HomeComponent } from './home/home.component';
 import { CallbackComponent } from './callback/callback.component';
-
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,8 +29,8 @@ const routes: Routes = [
     component: SearchArtistEventsComponent
   },
   { 
-    path: 'artist/:name/:event/weather', 
-    component: SearchEventWeatherComponent
+    path: 'artist/:name/:city/:event/weather',
+    component: WeatherComponent
   },
   { 
     path: 'favoris/', 
