@@ -6,8 +6,6 @@ import { AuthService } from './auth/auth.service';
 
 import { SearchArtistComponent} from './search-artist/search-artist.component';
 
-import { SearchArtistComponent} from './search-artist/search-artist.component';
-
 @NgModule({
   imports: [MdButtonModule, MdCheckboxModule],
 })
