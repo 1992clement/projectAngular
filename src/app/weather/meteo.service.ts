@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Headers, Http} from '@angular/http';
-import {Forecast} from './forecast';
+import {Http} from '@angular/http';
+import {WeatherApiResponse} from './weather-api-response';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -11,25 +11,32 @@ export class MeteoService {
     constructor(private http: Http) {
     }
 
-    private getResult(url: string): Promise<string> {
-        return new Promise(resolve => {
-            setTimeout(self => resolve(location + ' : toto'), 1000);
-        });
-    }
-
-    getWeatherFor(cityname: string): Promise<any> {
+    /**
+     * Get the weather API response for a specific location.
+     * @param cityname
+     * @return {Promise<any>|Promise<any>}
+     */
+    getWeatherFor(cityname: string): Promise<WeatherApiResponse> {
         const url = this.buildUrl(this.apiUrl, this.apiKey, cityname);
         return this.http.get(url)
             .toPromise()
+            .then(response => response.json() as WeatherApiResponse)
             .catch(this.handleError);
     }
 
-    buildUrl(apiUrl: string, apiKey: string, query: string): string{
-        return apiUrl + '?q=' + query + '&APPID=' + apiKey ;
+    /**
+     * Build the API url to call
+     * @param apiUrl
+     * @param apiKey
+     * @param query
+     * @return {string}
+     */
+    buildUrl(apiUrl: string, apiKey: string, query: string): string {
+        return apiUrl + '?q=' + query + '&APPID=' + apiKey;
     }
 
     private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
+        // console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     }
 

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MeteoService} from './meteo.service';
 import {Forecast} from './forecast';
+import {WeatherApiResponse} from './weather-api-response';
 
 @Component({
     selector: 'app-weather',
@@ -18,10 +19,14 @@ export class WeatherComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.meteoService.getWeatherFor(this.cityName).then(results => this.setDataForCity(results.json()));
+        this.meteoService.getWeatherFor(this.cityName).then(results => this.setDataForCity(results));
     }
 
-    setDataForCity(data): void {
+    /**
+     * retrieve Data from the weather service response
+     * @param data
+     */
+    setDataForCity(data: WeatherApiResponse): void {
         this.cityName = data.city.name;
         this.forecasts = data.list as Forecast[];
         console.log(this.forecasts);
