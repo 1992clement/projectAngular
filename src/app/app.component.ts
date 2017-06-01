@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   imports: [MdButtonModule, MdCheckboxModule],
@@ -13,5 +14,8 @@ import 'hammerjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  constructor(public auth: AuthService) {
+    auth.handleAuthentication();
+  }
 }

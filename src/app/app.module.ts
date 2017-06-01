@@ -26,6 +26,11 @@ import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
 import { SearchEventWeatherComponent } from './search-event-weather/search-event-weather.component';
 
+import { AuthService } from './auth/auth.service';
+import { HomeComponent } from './home/home.component';
+import { CallbackComponent } from './callback/callback.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +45,9 @@ import { SearchEventWeatherComponent } from './search-event-weather/search-event
     SearchHistoryCreateComponent,
     SearchHistoryUpdateComponent,
     SearchHistoryDetailComponent,
-    SearchHistoryComponent
+    SearchHistoryComponent,
+    CallbackComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,7 @@ import { SearchEventWeatherComponent } from './search-event-weather/search-event
     HttpModule,
     AppRoutingModule
   ],
-  providers: [SearchHistoryService],
+  providers: [AuthService, SearchHistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
