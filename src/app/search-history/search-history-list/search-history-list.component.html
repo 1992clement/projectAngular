@@ -1,10 +1,34 @@
-<p>
-  Your search history
-</p>
-<div *ngFor="let searchHistory of searchHistories; let i=index">
-    {{searchHistory.search}} - <span (click)="toDetail(i)">Detail</span> - <span (click)="toUpdate(i)">Update</span> - <span (click)="toDelete(i)">Delete</span>
+<div class="container container-crud">
+	<div class="row crud-action-row">
+		<div class="col-lg-12">
+			<h2>Your search History</h2>
+		</div>
+	</div>	
+	<div class="row crud-action-row">
+		<div class="col-lg-12">
+  	    	<a routerLink="/search-history/create" routerLinkActive="active" class="btn btn-success">Create Search History</a>
+  	    </div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<table class="table table-bordered">
+				<thead>
+	    			<tr>
+		      			<th>Search</th>
+		      			<th width="400px">Action</th>
+	    			</tr>
+				</thead>
+				<tbody>
+					<tr  *ngFor="let searchHistory of searchHistories; let i=index">
+						<td>
+							<a (click)="toDetail(i)" >{{searchHistory.search}}</a></td>
+						<td width="200px">
+							<span class="btn btn-warning" (click)="toUpdate(i)">Update</span>
+							<span class="btn btn-danger" (click)="toDelete(i)">Delete</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>	
 </div>
-
-<button (click)="goBack()">Back</button>
-
-<a routerLink="/search-history/create" routerLinkActive="active">Create Search History</a>
