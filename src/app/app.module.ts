@@ -17,10 +17,6 @@ import { SearchHistoryUpdateComponent } from './search-history/search-history-up
 import { SearchHistoryDetailComponent } from './search-history/search-history-detail/search-history-detail.component';
 import { SearchHistoryComponent } from './search-history/search-history.component';
 
-
-
-import { FavorisComponent } from './favoris/favoris.component';
-
 // Search
 import { SearchService } from './search.service';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
@@ -37,7 +33,6 @@ import { ArtistIdentityComponent } from './artist-identity/artist-identity.compo
   declarations: [
     AppComponent,
     WeatherComponent,
-    FavorisComponent,
     SearchArtistEventsComponent,
     SearchHistoryListComponent,
     SearchHistoryCreateComponent,

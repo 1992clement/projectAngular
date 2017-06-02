@@ -9,7 +9,6 @@ import {SearchHistoryCreateComponent} from './search-history/search-history-crea
 import {SearchHistoryUpdateComponent} from './search-history/search-history-update/search-history-update.component';
 import {SearchHistoryDetailComponent} from './search-history/search-history-detail/search-history-detail.component';
 import {AppComponent} from './app.component';
-import {FavorisComponent} from './favoris/favoris.component';
 import {ArtistIdentityComponent} from './artist-identity/artist-identity.component';
 import {SearchArtistEventsComponent} from './search-artist-events/search-artist-events.component';
 import {WeatherComponent} from './weather/weather.component';
@@ -36,10 +35,6 @@ const routes: Routes = [
     {
         path: 'artist/:name/:city/:event/weather',
         component: WeatherComponent
-    },
-    {
-        path: 'favoris/',
-        component: FavorisComponent
     },
     {
         path: 'search-history', component: SearchHistoryComponent, canActivate: [AuthGuardGuard],

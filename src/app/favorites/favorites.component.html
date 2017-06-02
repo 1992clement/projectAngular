@@ -1,5 +1,5 @@
 <ul class="favorites">
   <li *ngFor="let fav of userFavorites">
-    <a href="{{'artist/' + fav.artiste + '/' + fav.city + '/' + fav.date + '/weather' }}">{{fav.artiste}} - {{fav.city}} - {{fav.date}} </a>
+    <a href="{{'artist/' + fav.artiste + '/' + fav.city + '/' + fav.date + '/weather' }}">{{fav.artiste}} : {{fav.city}}, {{fav.date | date: 'longDate' }} at {{fav.date | date: 'mediumTime' }}</a>
   </li>
 </ul>
