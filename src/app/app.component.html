@@ -1,31 +1,19 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Auth0 - Angular</a>
+<md-grid-list cols="1" rowHeight="100px" [style.background]='primary'>
+    <md-toolbar color="primary">
 
-      <button
-        class="btn btn-primary btn-margin"
-        routerLink="/">
-          Home
-      </button>
+            <span>
+                AppName
+            </span>
+        <span class="example-spacer"></span>
+        <button md-button routerLink="/">Home</button>
+        <button md-button *ngIf="!auth.isAuthenticated()"
+                (click)="auth.login()">Log In
+        </button>
+        <button md-button *ngIf="auth.isAuthenticated()"
+                (click)="auth.logout()">Log Out
+        </button>
 
-      <button
-        class="btn btn-primary btn-margin"
-        *ngIf="!auth.isAuthenticated()"
-        (click)="auth.login()">
-          Log In
-      </button>
-
-      <button
-        class="btn btn-primary btn-margin"
-        *ngIf="auth.isAuthenticated()"
-        (click)="auth.logout()">
-          Log Out
-      </button>
-
-    </div>
-  </div>
-</nav>
-<router-outlet></router-outlet>
-
-<app-search-artist></app-search-artist>
+    </md-toolbar>
+    <router-outlet></router-outlet>
+    <app-search-artist></app-search-artist>
+</md-grid-list>

@@ -1,13 +1,28 @@
-<label for="search-artiste">Rechercher : </label><br>
-<input id="search-artiste" ng-model="input" placeholder="Entrez le nom d'un artiste" (change)="searchArtiste($event)">
-<br><br>
-<div *ngIf="result!==undefined && result!==false">
-	<h2>{{result.name}}</h2>
-	<img src={{result.thumb_url}} alt="cover"/>
-	<button (click)="goToEvents(result.name)">Events</button>
-</div>
-<div *ngIf="result===false">
-	Navré, cet artiste est inconnu, veuillez réessayer.
-</div>
+<md-card class="search-artiste-container">
+
+    <md-grid-list cols="4">
+        <md-grid-tile>
+
+            <md-input-container>
+                <input mdInput id="search-artiste" ng-model="input" placeholder="Entrez le nom d'un artiste"
+                       (change)="searchArtiste($event)">
+            </md-input-container>
+        </md-grid-tile>
+        <md-grid-tile [colspan]="3">
+
+            <div *ngIf="result!==undefined && result!==false">
+                <h2>{{result.name}}</h2>
+                <img src={{result.thumb_url}} alt="cover"/>
+                <button (click)="goToEvents(result.name)">Events</button>
+            </div>
+            <div *ngIf="result===false">
+                Navré, cet artiste est inconnu, veuillez réessayer.
+            </div>
+
+        </md-grid-tile>
+    </md-grid-list>
+
+
+</md-card>
 
 <router-outlet></router-outlet>
