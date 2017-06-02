@@ -1,0 +1,19 @@
+#weather-wrapper{
+    width : 70%;
+    margin-top : 20px;
+    margin-left : 15%;
+    background-color : white;
+}
+
+#weather-wrapper h2{
+    padding : 40px;
+    margin-top: 0;
+}
+
+#weather-wrapper p{
+    padding : 0 40px;
+}
+
+#weather-wrapper button{
+    margin : 0 0 40px 40px;
+}
