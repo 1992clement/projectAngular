@@ -1,0 +1,42 @@
+<div *ngIf="artist!==undefined && artist!==false" id="results-wrapper">
+	<div>
+		<div id="cover-wrapper">
+			<img src={{artist.thumb_url}} alt="cover" id="cover"/>
+		</div>
+		<div id="band-info-wrapper" *ngIf="displayButton">
+			<h2 id="band-title">
+				{{artist.name}} 
+				<a href={{artist.facebook_page_url}}>
+					<img src="../../assets/images/fb-icon.jpg" target="_blank" id="band-social-media">
+				</a>
+			</h2>
+
+			<div *ngIf="artist.upcoming_event_count!==0">
+				This group will be participating in {{artist.upcoming_event_count}} upcoming events. Do you want to check the list ?<br><br>
+				<button (click)="goToEvents(artist.name, artist.thumb_url)">Display the list</button>
+			</div>
+			<div *ngIf="artist.upcoming_event_count===0">
+				Sorry, we don't know of any planned concert for this group at the moment. Come back to check later !
+			</div>
+
+		</div>
+
+		<div id="band-info-wrapper" *ngIf="!displayButton">
+			<h2 id="band-title">
+				{{artist.name}} 
+				<a href={{artist.facebook_page_url}}>
+					<img src="../../assets/images/fb-icon.jpg" target="_blank" id="band-social-media">
+				</a>
+			</h2>
+
+			<div *ngIf="artist.upcoming_event_count!==0">
+				{{artist.upcoming_event_count}} events to come for this group.
+			</div>
+
+		</div>
+
+	</div>
+</div>
+<div *ngIf="artist===false" id="unknown-artist">
+	Sorry, we don't know about any artist that goes by that name.
+</div>
