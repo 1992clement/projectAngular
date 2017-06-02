@@ -15,7 +15,7 @@
 
 			<div *ngIf="result.upcoming_event_count!==0">
 				This group will be participating in {{result.upcoming_event_count}} upcoming events. Do you want to check the list ?<br><br>
-				<button (click)="goToEvents(result.name)">Display the list</button>
+				<button (click)="goToEvents(result.name, result.thumb_url)">Display the list</button>
 			</div>
 			<div *ngIf="result.upcoming_event_count===0">
 				Sorry, we don't know of any planned concert for this group at the moment. Come back to check later !
