@@ -52,10 +52,10 @@ export class FavoritesService {
             listFavorites = this.delete(exists);
         } else {
             listFavorites.push(currentFavorites);
-            console.log('push');
         }
         localStorage.setItem(this.localStorageKey, JSON.stringify(listFavorites));
         return listFavorites;
+
     }
 
     /**
@@ -86,13 +86,11 @@ export class FavoritesService {
      * @param currentFavorites
      * @return {number}
      */
-    checkIfExists(currentFavorites: Favorites): number {
+    checkIfExists(currentFavorites: Favorites) {
         const listFavorites = this.getAll();
         let found = -1;
         for (let i = 0; i < listFavorites.length; i++) {
-            console.log(listFavorites[i].artiste, currentFavorites.artiste, listFavorites[i].date, currentFavorites.date)
-            if (listFavorites[i].artiste === currentFavorites.artiste && listFavorites[i].date === currentFavorites.date) {
-                console.log('exists');
+            if (listFavorites[i].artiste == currentFavorites.artiste && listFavorites[i].date == currentFavorites.date) {
                 found = i;
             }
         }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import {Artist} from './search-artist/artist';
+import {Artist} from './artist';
 import {ArtistEvent} from './search-artist-events/event';
 
 @Injectable()

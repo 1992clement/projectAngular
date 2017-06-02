@@ -29,3 +29,16 @@
 .country-name{
 	color : #2196F3;
 }
+
+#events-results-wrapper .faves{
+    text-align: center;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+#events-results-wrapper .faves i{
+    color: goldenrod;
+}
+#events-results-wrapper .faves i:hover{
+    cursor: pointer;
+}

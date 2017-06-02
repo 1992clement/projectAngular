@@ -1,8 +1,14 @@
+<app-artist-identity [displayButton]="false" ></app-artist-identity>
 <div *ngIf="events!==undefined&&events[0]!==undefined" id="events-results-wrapper">
-	<h2>Liste des events pour : {{events[0].lineup[0]}}</h2>
 	<ul>
 		<li *ngFor="let event of events">
 			<div class="row">
+                <div class="col-md-1">
+                    <div class="faves">
+                        <i class="material-icons" *ngIf="isFavorites(name,event.datetime)" (click)="addToFavorites(name, event.venue.city, event.venue.country, event.venue.name, event.datetime)">star</i>
+                        <i class="material-icons" *ngIf="!isFavorites(name,event.datetime)" (click)="addToFavorites(name, event.venue.city, event.venue.country, event.venue.name, event.datetime)">star_border</i>
+                    </div>
+                </div>
 				<div class="col-md-6">
 					<span class="country-name">
 						{{event.venue.country}}, {{event.venue.city}}
@@ -15,9 +21,7 @@
 						- tickets {{event.offers[0].status}} 
 					</span> <br>
 					 <button class="btn" (click)="goToWeather(name, event.venue.city, event.datetime)">Check the weather</button>
-					 <button  *ngIf="isFavorites(name,event.datetime)" class="btn" (click)="addToFavorites(name, event.venue.city, event.venue.country, event.venue.name, event.datetime)">UnFavorites</button>
-					 <button  *ngIf="!isFavorites(name,event.datetime)" class="btn" (click)="addToFavorites(name, event.venue.city, event.venue.country, event.venue.name, event.datetime)">Favorites</button>
-				</div>
+                </div>
 				<div class="col-md-6">
 
 				</div>
@@ -25,5 +29,3 @@
 		</li>
 	</ul>
 </div>
-
-<router-outlet></router-outlet>

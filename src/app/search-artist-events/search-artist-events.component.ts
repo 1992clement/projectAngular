@@ -7,6 +7,7 @@ import {Location} from '@angular/common';
 import {WeatherComponent} from '../weather/weather.component';
 import 'rxjs/add/operator/switchMap';
 import {ArtistEvent} from './event';
+import {ArtistIdentityComponent} from '../artist-identity/artist-identity.component';
 
 import {Favorites} from '../favorites/favorites';
 import {FavoritesService} from '../favorites/favorites.service';
