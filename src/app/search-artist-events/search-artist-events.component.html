@@ -15,6 +15,8 @@
 						- tickets {{event.offers[0].status}} 
 					</span> <br>
 					 <button class="btn" (click)="goToWeather(name, event.venue.city, event.datetime)">Check the weather</button>
+					 <button  *ngIf="isFavorites(name,event.datetime)" class="btn" (click)="addToFavorites(name, event.venue.city, event.venue.country, event.venue.name, event.datetime)">UnFavorites</button>
+					 <button  *ngIf="!isFavorites(name,event.datetime)" class="btn" (click)="addToFavorites(name, event.venue.city, event.venue.country, event.venue.name, event.datetime)">Favorites</button>
 				</div>
 				<div class="col-md-6">
 

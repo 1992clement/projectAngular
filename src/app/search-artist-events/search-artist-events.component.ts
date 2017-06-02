@@ -7,6 +7,9 @@ import { Location } from '@angular/common';
 import { WeatherComponent } from '../weather/weather.component';
 import 'rxjs/add/operator/switchMap';
 
+import { Favorites }            from '../favorites/favorites';
+import { FavoritesService }     from '../favorites/favorites.service';
+
 @Component({
   selector: 'app-search-artist-events',
   templateUrl: './search-artist-events.component.html',
@@ -19,11 +22,12 @@ export class SearchArtistEventsComponent implements OnInit {
   	private searchService: SearchService,
   	private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private favoritesService: FavoritesService
   ) { }
 
   ngOnInit() {
-    this.name = this.route.params['name'];
+    this.name = this.route.snapshot.params['name'];
   	this.route.params
     .switchMap((params: Params) => this.searchService.getEvents(params['name']))
     .subscribe(data => this.events = data.json() as object[]);
@@ -38,6 +42,37 @@ export class SearchArtistEventsComponent implements OnInit {
    */
   goToWeather(name:string, city:string, date:string):void{
     this.router.navigate(['/artist/' + name + '/' + city + '/' + date + '/weather']);
+  }
+
+  addToFavorites(artiste: string, city: string, country: string, venue: string, date: string){
+    this.name = this.route.snapshot.params['name'];
+    let photo = JSON.parse(localStorage.getItem('last_picture'));
+    let currentFavorites = new Favorites(
+      this.name,
+      photo,
+      city,
+      country,
+      venue,
+      date
+    );
+    this.favoritesService.create(currentFavorites);
+  }
+
+  isFavorites(artiste: string, date:string){
+    let currentFavorites = new Favorites(
+      artiste,
+      '',
+      '',
+      '',
+      '',
+      date
+    );
+    let exists = this.favoritesService.checkIfExists(currentFavorites);
+    if(-1 === exists){
+      return false;
+    }else{
+      return true;
+    }
   }
 
 }

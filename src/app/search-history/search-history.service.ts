@@ -1,6 +1,6 @@
 /*
   This service is used to save the search history of a user in the local storage.
-  In this context the id id the index of an element in the list.
+  In this context the id the index of an element in the list.
 */
 
 import { Injectable } from '@angular/core';

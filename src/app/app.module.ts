@@ -30,6 +30,8 @@ import { AuthService } from './auth/auth.service';
 import { HomeComponent } from './home/home.component';
 import { CallbackComponent } from './callback/callback.component';
 import {AuthGuardGuard} from './auth-guard.guard';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { FavoritesService } from './favorites/favorites.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {AuthGuardGuard} from './auth-guard.guard';
     SearchHistoryDetailComponent,
     SearchHistoryComponent,
     CallbackComponent,
-    HomeComponent
+    HomeComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import {AuthGuardGuard} from './auth-guard.guard';
     AuthService,
     SearchHistoryService,
     SearchService,
-    AuthGuardGuard
+    AuthGuardGuard,
+    FavoritesService
   ],
   bootstrap: [AppComponent]
 })
