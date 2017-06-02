@@ -1,4 +1,5 @@
 <input id="search-artiste" ng-model="input" placeholder="Search your favorite band !" (change)="searchArtiste($event)">
+<app-favorites></app-favorites>
 <br><br>
 <div *ngIf="result!==undefined && result!==false" id="results-wrapper">
 	<div>

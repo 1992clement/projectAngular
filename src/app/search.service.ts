@@ -19,7 +19,7 @@ export class SearchService {
         return this.http.get(this.searchURL)
             .toPromise()
             .catch(this.handleError);
-    }
+}
 
     private handleError(error: any) {
         console.error('An error occured : ' + error);

@@ -8,7 +8,7 @@ export class ArtistEvent {
     venue: Venue;
 }
 
-export class Venue {
+class Venue {
     city: string;
     country: string;
     latitude: string;
@@ -16,3 +16,4 @@ export class Venue {
     name: string;
     region: string;
 }
+

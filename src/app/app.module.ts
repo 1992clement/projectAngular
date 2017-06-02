@@ -21,7 +21,7 @@ import { SearchHistoryComponent } from './search-history/search-history.componen
 
 import { FavorisComponent } from './favoris/favoris.component';
 
-//Search
+// Search
 import { SearchService } from './search.service';
 import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';

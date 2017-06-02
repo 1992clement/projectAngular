@@ -1,3 +1,5 @@
-<p>
-  favorites works!
-</p>
+<ul class="favorites">
+  <li *ngFor="let fav of userFavorites">
+    <a href="{{'artist/' + fav.artiste + '/' + fav.city + '/' + fav.date + '/weather' }}">{{fav.artiste}}</a>
+  </li>
+</ul>
