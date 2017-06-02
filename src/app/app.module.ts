@@ -29,7 +29,7 @@ import { SearchArtistEventsComponent } from './search-artist-events/search-artis
 import { AuthService } from './auth/auth.service';
 import { HomeComponent } from './home/home.component';
 import { CallbackComponent } from './callback/callback.component';
-
+import {AuthGuardGuard} from './auth-guard.guard';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,12 @@ import { CallbackComponent } from './callback/callback.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [AuthService,SearchHistoryService, SearchService],
+  providers: [
+    AuthService,
+    SearchHistoryService,
+    SearchService,
+    AuthGuardGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
