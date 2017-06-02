@@ -20,6 +20,10 @@ export class MeteoService {
         const url = this.buildUrl(this.apiUrl, this.apiKey, cityname);
         return this.http.get(url)
             .toPromise()
+            .then(function (resp) {
+                console.log(resp.json());
+                return resp;
+            })
             .then(response => response.json() as WeatherApiResponse)
             .catch(this.handleError);
     }
@@ -40,8 +44,8 @@ export class MeteoService {
         return Promise.reject(error.message || error);
     }
 
-    changeFormat(date: string): Date{
-        let newDate = new Date(date.replace("T", " "));
+    changeFormat(date: string): Date {
+        const newDate = new Date(date.replace('T', ' '));
         return newDate;
     }
 }
