@@ -16,6 +16,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { HomeComponent } from './home/home.component';
 import { CallbackComponent } from './callback/callback.component';
 
+import {AuthGuardGuard} from './auth-guard.guard';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -36,7 +38,7 @@ const routes: Routes = [
     path: 'favoris/', 
     component: FavorisComponent
   },
-  { path: 'search-history',  component: SearchHistoryComponent,
+  { path: 'search-history',  component: SearchHistoryComponent,  canActivate: [AuthGuardGuard],
       children: [
         { path: '',           component: SearchHistoryListComponent },
         { path: 'create',     component: SearchHistoryCreateComponent },
