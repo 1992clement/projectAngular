@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchArtistComponent } from './search-artist.component';
+import { ArtistIdentityComponent } from './artist-identity.component';
 
-describe('SearchArtistComponent', () => {
-  let component: SearchArtistComponent;
-  let fixture: ComponentFixture<SearchArtistComponent>;
+describe('ArtistIdentityComponent', () => {
+  let component: ArtistIdentityComponent;
+  let fixture: ComponentFixture<ArtistIdentityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchArtistComponent ]
+      declarations: [ ArtistIdentityComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchArtistComponent);
+    fixture = TestBed.createComponent(ArtistIdentityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

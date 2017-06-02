@@ -23,7 +23,6 @@ import { FavorisComponent } from './favoris/favoris.component';
 
 //Search
 import { SearchService } from './search.service';
-import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
 
 import { AuthService } from './auth/auth.service';
@@ -32,13 +31,13 @@ import { CallbackComponent } from './callback/callback.component';
 import {AuthGuardGuard} from './auth-guard.guard';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { FavoritesService } from './favorites/favorites.service';
+import { ArtistIdentityComponent } from './artist-identity/artist-identity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     FavorisComponent,
-    SearchArtistComponent,
     SearchArtistEventsComponent,
     SearchHistoryListComponent,
     SearchHistoryCreateComponent,
@@ -47,7 +46,8 @@ import { FavoritesService } from './favorites/favorites.service';
     SearchHistoryComponent,
     CallbackComponent,
     HomeComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    ArtistIdentityComponent
   ],
   imports: [
     BrowserModule,

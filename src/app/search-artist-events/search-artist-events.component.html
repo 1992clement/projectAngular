@@ -1,5 +1,5 @@
+<app-artist-identity [displayButton]="false" ></app-artist-identity>
 <div *ngIf="events!==undefined&&events[0]!==undefined" id="events-results-wrapper">
-	<h2>Liste des events pour : {{events[0].lineup[0]}}</h2>
 	<ul>
 		<li *ngFor="let event of events">
 			<div class="row">
@@ -25,5 +25,3 @@
 		</li>
 	</ul>
 </div>
-
-<router-outlet></router-outlet>

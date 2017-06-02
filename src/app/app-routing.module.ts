@@ -9,7 +9,7 @@ import { SearchHistoryUpdateComponent } from './search-history/search-history-up
 import { SearchHistoryDetailComponent } from './search-history/search-history-detail/search-history-detail.component';
 import { AppComponent } from './app.component';
 import { FavorisComponent } from './favoris/favoris.component';
-import { SearchArtistComponent } from './search-artist/search-artist.component';
+import { ArtistIdentityComponent } from './artist-identity/artist-identity.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
 import { WeatherComponent } from './weather/weather.component';
 
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'callback', component: CallbackComponent },
   { 
     path: 'artist/:name', 
-    component: SearchArtistComponent
+    component: ArtistIdentityComponent
   },
   { 
     path: 'artist/:name/events', 
