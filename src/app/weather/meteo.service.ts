@@ -21,7 +21,6 @@ export class MeteoService {
         return this.http.get(url)
             .toPromise()
             .then(function (resp) {
-                console.log(resp.json());
                 return resp;
             })
             .then(response => response.json() as WeatherApiResponse)

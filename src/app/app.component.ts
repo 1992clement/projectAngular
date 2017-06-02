@@ -39,7 +39,8 @@ export class AppComponent {
         artistName
       );
       this.searchHistory.create(currentSearchHistory);
-      this.router.navigate(['/artist/' + artistName]);
+      //this.router.navigate(['/artist/' + artistName]);
+      window.location.replace('http://localhost:4200/artist/' + artistName);
     }
   }
 
