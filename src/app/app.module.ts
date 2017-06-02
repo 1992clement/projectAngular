@@ -25,7 +25,6 @@ import { FavorisComponent } from './favoris/favoris.component';
 import { SearchService } from './search.service';
 import { SearchArtistComponent } from './search-artist/search-artist.component';
 import { SearchArtistEventsComponent } from './search-artist-events/search-artist-events.component';
-import { SearchEventWeatherComponent } from './search-event-weather/search-event-weather.component';
 
 import { AuthService } from './auth/auth.service';
 import { HomeComponent } from './home/home.component';
@@ -39,7 +38,6 @@ import { CallbackComponent } from './callback/callback.component';
     FavorisComponent,
     SearchArtistComponent,
     SearchArtistEventsComponent,
-    SearchEventWeatherComponent,
     SearchHistoryListComponent,
     SearchHistoryCreateComponent,
     SearchHistoryUpdateComponent,
